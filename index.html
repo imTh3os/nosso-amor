@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Amor 💖</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #d63384;
+    }
+
+    #contador {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 20px;
+      color: #444;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Estamos juntos há...</h1>
+  <div id="contador"></div>
+  
+  <img src="casal.jpg" alt="Foto do casal">
+
+  <p>Meu amor,
+
+Neste Dia dos Namorados, quero agradecer do fundo do coração por tudo que você tem feito por nós e por mim. Sua presença, carinho e apoio são o que tornam meus dias mais leves e felizes. Estou muito ansioso por esse novo ciclo que estamos prestes a começar, morando juntos em agosto.
+
+Não vejo a hora de compartilharmos cada momento, construirmos nosso lar e conquistarmos tudo o que sonhamos, lado a lado. Tenho certeza de que juntos somos mais fortes e que o melhor ainda está por vir.
+
+Te amo demais e sou muito grato por ter você na minha vida.
+
+Feliz Dia dos Namorados! 💕</p>
+
+  <script>
+    // Coloque aqui a data em que vocês começaram a namorar (ano, mês (0 = jan), dia, hora, minuto, segundo)
+    const dataNamoro = new Date(2023, 6, 22, 17, 0, 0); // Ex: 5 de junho de 2022 às 20h
+
+    function atualizaContador() {
+      const agora = new Date();
+      let diff = agora - dataNamoro;
+
+      const segundos = Math.floor(diff / 1000) % 60;
+      const minutos = Math.floor(diff / (1000 * 60)) % 60;
+      const horas = Math.floor(diff / (1000 * 60 * 60)) % 24;
+
+      const diasTotais = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const anos = Math.floor(diasTotais / 365);
+      const meses = Math.floor((diasTotais % 365) / 30);
+      const dias = diasTotais - (anos * 365 + meses * 30);
+
+      document.getElementById("contador").innerHTML =
+        `${anos} anos, ${meses} meses, ${dias} dias, ` +
+        `${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    setInterval(atualizaContador, 1000);
+    atualizaContador();
+  </script>
+</body>
+</html>
